@@ -19,6 +19,16 @@ const Buttons = (props) => {
         questionID={props.questionID}
         setQuestionID={props.setQuestionID}
       />
+
+
+      <FinishBtn
+        data={props.data}
+        questionID={props.questionID}
+        setQuestionID={props.setQuestionID}
+      />
+
+     
+
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 // import Variant from './Variant';
 import { v4 } from 'uuid';
 import { useState } from 'react';
-
+import Variant from './Variant';
 
 const Question = (props) => {
 
@@ -44,10 +44,21 @@ const Question = (props) => {
       <div className="variants-block">
      
 
-        <input type="radio" name='q' value="0" checked={ answerIndex.toString() == "0"} onChange={(e) => changeRadio(e) } />
+
+        {/* <input type="radio" name='q' value="0" checked={ answerIndex.toString() == "0"} onChange={(e) => changeRadio(e) } />
         <input type="radio" name='q' value="1" checked={ answerIndex.toString() == "1"} onChange={(e) => changeRadio(e) } />
         <input type="radio" name='q' value="2" checked={ answerIndex.toString() == "2"} onChange={(e) => changeRadio(e) } />
-        <input type="radio" name='q' value="3" checked={ answerIndex.toString() == "3"} onChange={(e) => changeRadio(e) } />
+        <input type="radio" name='q' value="3" checked={ answerIndex.toString() == "3"} onChange={(e) => changeRadio(e) } /> */}
+
+        {answersArray.map( (arr, index) => <Variant
+          changeRadio={changeRadio}
+          index={index}
+          questionID={props.questionID}
+          answerIndex={answerIndex}
+          answer={arr}
+
+          key={v4()}
+        /> )}
 
 
       </div>

@@ -21,7 +21,6 @@ function App() {
   let [userAnswers, setUserAnswers] = useState( arr );
 
 
-  // console.log(arr)
 
 
   useEffect( () => {
@@ -59,7 +58,8 @@ function App() {
 
      <Route path='/results' element={
         <Results
-        
+          data={data}
+          userAnswers={userAnswers}
         />
      } />
      </Routes>
