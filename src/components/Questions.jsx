@@ -8,22 +8,21 @@ import Buttons from './Buttons';
 const Questions = (props) => {
 
 
-
   return (
     <div className='questions' >
       
 
       <Question
         data={props.data}
-        currentQuestionID={props.currentQuestionID}
+        questionID={props.questionID}
         userAnswers={props.userAnswers}
         setUserAnswers={props.setUserAnswers}
       />
 
       <Buttons
         data={props.data}
-        currentQuestionID={props.currentQuestionID}
-        setCurrentQuestionID={props.setCurrentQuestionID}
+        questionID={props.questionID}
+        setQuestionID={props.setQuestionID}
       />
      
 

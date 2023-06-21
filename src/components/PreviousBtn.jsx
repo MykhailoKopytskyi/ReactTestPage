@@ -2,11 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const PreviousBtn = (props) => {
-  if(+props.currentQuestionID !== 1 ) {
+  if(+props.questionID !== 1 ) {
 
 
-    return <NavLink to={`/questions/${+props.currentQuestionID-1}`} >
-      <button className='previous-btn btn' onClick={ () => props.setCurrentQuestionID( (prev) => prev - 1 ) } >Previous</button>
+    return <NavLink to={`/questions/${+props.questionID-1}`} >
+      <button className='previous-btn btn' onClick={ () => props.setQuestionID( (prev) => prev - 1 ) } >Previous</button>
     </NavLink>
   }
   else {

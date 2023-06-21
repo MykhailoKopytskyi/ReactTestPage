@@ -9,15 +9,15 @@ const Buttons = (props) => {
     <div className="buttons" >
        <PreviousBtn
         data={props.data}
-        currentQuestionID={props.currentQuestionID}
-        setCurrentQuestionID={props.setCurrentQuestionID}
+        questionID={props.questionID}
+        setQuestionID={props.setQuestionID}
 
       />
 
       <NextBtn
         data={props.data}
-        currentQuestionID={props.currentQuestionID}
-        setCurrentQuestionID={props.setCurrentQuestionID}
+        questionID={props.questionID}
+        setQuestionID={props.setQuestionID}
       />
     </div>
   )

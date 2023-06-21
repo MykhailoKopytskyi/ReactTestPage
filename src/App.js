@@ -1,7 +1,6 @@
 import './App.css';
 import data from "./data";
 import {useEffect, useState} from "react";
-import { useParams } from 'react-router-dom';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Start from './components/Start';
@@ -13,30 +12,31 @@ function App() {
 
   let arr = [];
   for( let i = 1; i <=  data.length; i++ ) {
-    arr.push({"currentQuestionID": i,
-    "answerIndex": 0
-  })
+    arr.push({"questionID": i,
+    "answerIndex": 0  })
   }
 
   const numberOfQuestions = data.length;
-  let [currentQuestionID, setCurrentQuestionID] = useState(JSON.parse(localStorage.getItem("currentQuestionID")) || 1 );
-  let [userAnswers, setUserAnswers] = useState( arr )
+  let [questionID, setQuestionID] = useState(JSON.parse(localStorage.getItem("questionID")) || 1 );
+  let [userAnswers, setUserAnswers] = useState( arr );
 
 
-
-
+  // console.log(arr)
 
 
   useEffect( () => {
-
-    localStorage.setItem("currentQuestionID", JSON.stringify(currentQuestionID))
-
-  }, [currentQuestionID] )
+    localStorage.setItem("questionID", JSON.stringify(questionID))
+  }, [questionID] );
 
 
- 
+
+
 
   return (
+
+
+
+    
     <BrowserRouter>
     <div className="App">
       <Routes>
@@ -50,8 +50,8 @@ function App() {
         <Route path={`/questions/:id`}  element={
             <Questions
               data={data}
-              currentQuestionID={currentQuestionID}
-              setCurrentQuestionID={setCurrentQuestionID}
+              questionID={questionID}
+              setQuestionID={setQuestionID}
               userAnswers={userAnswers}
               setUserAnswers={setUserAnswers}
             />
@@ -66,6 +66,6 @@ function App() {
     </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

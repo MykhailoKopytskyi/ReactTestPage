@@ -3,16 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 
 const NextBtn = (props) => {
-  if(props.currentQuestionID !== props.data.length ) {
+  if(props.questionID !== props.data.length ) {
     
-    return <NavLink to={`/questions/${+props.currentQuestionID+1}`} >
- 
- <button className='next-btn btn' onClick={ () => props.setCurrentQuestionID( (prev) => prev + 1 ) } >Next</button>
-
-
-
-</NavLink>
+  return <NavLink to={`/questions/${+props.questionID+1}`} >
+            <button className='next-btn btn' onClick={ () => props.setQuestionID( (prev) => prev + 1 ) } >Next</button>
+        </NavLink>
   }
+
   else {
     return false;
   }
