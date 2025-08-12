@@ -1,3 +1,10 @@
+# A simple React test page
+A short test with the preset questions on general knowledge. It was created as part of practising React framework.
+It gives a number of correct answers in the end.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
